@@ -5,22 +5,22 @@
 class Fexec < Formula
   desc "Connect to a container running on AWS Fargate."
   homepage ""
-  version "0.1.13"
+  version "0.1.14"
 
   depends_on "go"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gajirou/fexec/releases/download/v0.1.13/fexec_macOS_arm64.tar.gz"
-      sha256 "87169d0058d2190cc5d63c8ccebba40433212aaa5efeb68482244e0c1bf3fa0d"
+      url "https://github.com/gajirou/fexec/releases/download/v0.1.14/fexec_macos_arm64.tar.gz"
+      sha256 "1fd4f6ce64b556b0c30d2a62addcdeab0283af95889e11adb57613abec05bfee"
 
       def install
         bin.install "fexec"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gajirou/fexec/releases/download/v0.1.13/fexec_macOS_amd64.tar.gz"
-      sha256 "04e9c68a77b9b6a99af7a68ab284cd24744fec8db204c2764112f8d01e1f01a5"
+      url "https://github.com/gajirou/fexec/releases/download/v0.1.14/fexec_macos_amd64.tar.gz"
+      sha256 "50964cbb4a66f51dcf59a968707ea22b30546462e5fb3813ccde434f25deba6c"
 
       def install
         bin.install "fexec"
@@ -30,16 +30,16 @@ class Fexec < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gajirou/fexec/releases/download/v0.1.13/fexec_Linux_amd64.tar.gz"
-      sha256 "ac48f0174bc995deb54e4960d04708852858d571651b05dad3bcb841886cf742"
+      url "https://github.com/gajirou/fexec/releases/download/v0.1.14/fexec_linux_amd64.tar.gz"
+      sha256 "41bd644378f71b03342a8de0ad2bfbe9afe9e8161bfdaf2521cb78e8c5bac43b"
 
       def install
         bin.install "fexec"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gajirou/fexec/releases/download/v0.1.13/fexec_Linux_arm64.tar.gz"
-      sha256 "ef6164d67a2fe93058e7fd278b315e64db1145b1b561a1012986572d1255e400"
+      url "https://github.com/gajirou/fexec/releases/download/v0.1.14/fexec_linux_arm64.tar.gz"
+      sha256 "3fad341ab9d10cb345a418f24652ad8a104e8e3fafb7d43cae61daf32baff7bd"
 
       def install
         bin.install "fexec"
