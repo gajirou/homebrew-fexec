@@ -5,22 +5,22 @@
 class Fexec < Formula
   desc "Connect to a container running on AWS Fargate."
   homepage ""
-  version "0.4.0"
+  version "0.5.0"
 
   depends_on "go"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gajirou/fexec/releases/download/v0.4.0/fexec_darwin_amd64.tar.gz"
-      sha256 "f4ec836bbaa42fc875834f049e2c172989c4b3837358b91a8eb6338663f962ca"
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.0/fexec_darwin_amd64.tar.gz"
+      sha256 "20b35c207a4214a126889369ef45f7b223f178adfed69e683a81388a70262f42"
 
       def install
         bin.install "fexec"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gajirou/fexec/releases/download/v0.4.0/fexec_darwin_arm64.tar.gz"
-      sha256 "2deac1cce7d685dd96bd315f5b2765a0b616d16353bf5d6988217119abfeee81"
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.0/fexec_darwin_arm64.tar.gz"
+      sha256 "664c419093836998133d3482fb658dfb3ef48888decf62bdd945def4327137eb"
 
       def install
         bin.install "fexec"
@@ -29,24 +29,18 @@ class Fexec < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gajirou/fexec/releases/download/v0.4.0/fexec_linux_amd64.tar.gz"
-        sha256 "4fe1b612e8aadcffa0f3156e14ea713f4b581a13dfcfa3cb59786215d097ac79"
-
-        def install
-          bin.install "fexec"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.0/fexec_linux_amd64.tar.gz"
+      sha256 "7601e6f0e0a7f9cc4e73cc67a417dd91bc5df21fa7304cd11d1cb1ea7cd4dcfe"
+      def install
+        bin.install "fexec"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gajirou/fexec/releases/download/v0.4.0/fexec_linux_arm64.tar.gz"
-        sha256 "609a2ce11c31497a7687a29c22f1095fde67d4053bd91d5b2486413597a3f54e"
-
-        def install
-          bin.install "fexec"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.0/fexec_linux_arm64.tar.gz"
+      sha256 "1ff66995e4f93016f3b70f9b3c0fe00b86533f31eccd90b58cd64ca80d4bb233"
+      def install
+        bin.install "fexec"
       end
     end
   end
