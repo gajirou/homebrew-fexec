@@ -5,22 +5,22 @@
 class Fexec < Formula
   desc "Connect to a container running on AWS Fargate."
   homepage ""
-  version "0.5.0"
+  version "0.5.1"
 
   depends_on "go"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gajirou/fexec/releases/download/v0.5.0/fexec_darwin_amd64.tar.gz"
-      sha256 "20b35c207a4214a126889369ef45f7b223f178adfed69e683a81388a70262f42"
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.1/fexec_darwin_amd64.tar.gz"
+      sha256 "dc192462a732e8f51420c07f609328a2178760641f11cc2ba674a460609b4463"
 
       def install
         bin.install "fexec"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gajirou/fexec/releases/download/v0.5.0/fexec_darwin_arm64.tar.gz"
-      sha256 "664c419093836998133d3482fb658dfb3ef48888decf62bdd945def4327137eb"
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.1/fexec_darwin_arm64.tar.gz"
+      sha256 "c1bea0dba69dd4488fadda9e29336e20fdeee31fd057ef59ff4907975bd9561e"
 
       def install
         bin.install "fexec"
@@ -30,15 +30,15 @@ class Fexec < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/gajirou/fexec/releases/download/v0.5.0/fexec_linux_amd64.tar.gz"
-      sha256 "7601e6f0e0a7f9cc4e73cc67a417dd91bc5df21fa7304cd11d1cb1ea7cd4dcfe"
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.1/fexec_linux_amd64.tar.gz"
+      sha256 "2652f4f2d961a3ca6c4b57ddf68a88ad604971502d057496a41bf603df9b21ef"
       def install
         bin.install "fexec"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/gajirou/fexec/releases/download/v0.5.0/fexec_linux_arm64.tar.gz"
-      sha256 "1ff66995e4f93016f3b70f9b3c0fe00b86533f31eccd90b58cd64ca80d4bb233"
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.1/fexec_linux_arm64.tar.gz"
+      sha256 "bfea1b405ab5d06ef68055f961348b12a019f94c0cd0fec725384ea26e0cb5b1"
       def install
         bin.install "fexec"
       end
