@@ -5,22 +5,22 @@
 class Fexec < Formula
   desc "Connect to a container running on AWS Fargate."
   homepage ""
-  version "0.5.1"
+  version "0.5.2"
 
   depends_on "go"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gajirou/fexec/releases/download/v0.5.1/fexec_darwin_amd64.tar.gz"
-      sha256 "dc192462a732e8f51420c07f609328a2178760641f11cc2ba674a460609b4463"
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.2/fexec_darwin_amd64.tar.gz"
+      sha256 "496cdd71c391f8fc67bb632368bdd029176820b7b300ad8a1a505010d047196d"
 
       def install
         bin.install "fexec"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gajirou/fexec/releases/download/v0.5.1/fexec_darwin_arm64.tar.gz"
-      sha256 "c1bea0dba69dd4488fadda9e29336e20fdeee31fd057ef59ff4907975bd9561e"
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.2/fexec_darwin_arm64.tar.gz"
+      sha256 "391a0d31d2a94f88bf07f432057da13807ad58d24d5849040bef72d6b6d7674b"
 
       def install
         bin.install "fexec"
@@ -29,16 +29,16 @@ class Fexec < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/gajirou/fexec/releases/download/v0.5.1/fexec_linux_amd64.tar.gz"
-      sha256 "2652f4f2d961a3ca6c4b57ddf68a88ad604971502d057496a41bf603df9b21ef"
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.2/fexec_linux_amd64.tar.gz"
+      sha256 "cf392abae4927d2a057d425fdd93c251f613ac2810cdac843ddd427f6405d821"
       def install
         bin.install "fexec"
       end
     end
-    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/gajirou/fexec/releases/download/v0.5.1/fexec_linux_arm64.tar.gz"
-      sha256 "bfea1b405ab5d06ef68055f961348b12a019f94c0cd0fec725384ea26e0cb5b1"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gajirou/fexec/releases/download/v0.5.2/fexec_linux_arm64.tar.gz"
+      sha256 "fcc2a4b2c48d66c6d491e041632d5f42ecb6b58069162af01f152ce70d9c29bb"
       def install
         bin.install "fexec"
       end
